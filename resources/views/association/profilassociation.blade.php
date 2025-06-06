@@ -1,5 +1,5 @@
-    <!DOCTYPE html>
-    <html lang="fr">
+<!DOCTYPE html>
+<html lang="fr">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,15 +8,16 @@
         <style>
             /* Color Variables based on the provided images */
             :root {
-                --color-dark-blue: #1E3A8A; /* Header, left panel, button, text */
-                --color-light-gray-bg: #E5E7EB; /* Main page background */
-                --color-white: #FFFFFF; /* Card backgrounds, button text */
-                --color-text-dark: #111827; /* General text color */
-                --color-light-blue-input: #BFDBFE; /* Used for lighter elements within dark blue sections (not directly in this design but from previous context) */
-                --color-teal: #06B6D4; /* "Status don" tag, "m'interesse" button */
-                --color-blue-tag: #BFDBFE; /* "Type de don" tag */
-                --color-gray-text: #6B7280; /* Secondary text like descriptions, placeholders */
-                --color-dark-blue-text: #1E3A8A; /* Specifically for "Voir tous les besoins/dons" */
+                --color-dark-blue: #1E3A8A;
+                --color-light-gray-bg: #E5E7EB;
+                --color-white: #FFFFFF;
+                --color-text-dark: #111827;
+                --color-light-blue-input: #BFDBFE;
+                --color-teal: #06B6D4;
+                --color-blue-tag: #BFDBFE;
+                --color-gray-text: #6B7280;
+                --color-dark-blue-text: #1E3A8A;
+                --color-green: #4CAF50;
             }
 
             /* General Body & Reset */
@@ -40,7 +41,7 @@
             /* Header */
             .header {
                 background-color: var(--color-dark-blue);
-                padding: 15px 40px; /* Adjusted padding to match image */
+                padding: 15px 40px;
                 box-shadow: 0 2px 5px rgba(0,0,0,0.1);
                 color: var(--color-white);
                 display: flex;
@@ -54,46 +55,40 @@
                 color: var(--color-white);
             }
 
-            .header .logout-link {
-                color: var(--color-white);
-                font-weight: 500;
-                opacity: 0.8;
-                transition: opacity 0.3s ease;
-            }
-
-            .header .logout-link:hover {
-                opacity: 1;
-            }
-
             /* Main Content Wrapper */
             .profile-page-wrapper {
                 display: flex;
                 flex-grow: 1;
-                padding: 30px; /* Padding around the entire content area */
-                gap: 30px; /* Space between left panel and main content */
+                padding: 30px;
+                gap: 30px;
             }
 
             /* Left Panel (Profile Info) */
             .profile-left-panel {
                 background-color: var(--color-dark-blue);
-                width: 280px; /* Fixed width as per image */
-                min-width: 280px; /* Prevent shrinking */
-                border-radius: 15px; /* Slight rounded corners */
+                width: 280px;
+                min-width: 280px;
+                border-radius: 15px;
                 padding: 40px 20px;
                 display: flex;
                 flex-direction: column;
                 align-items: center;
                 color: var(--color-white);
-                flex-shrink: 0; /* Prevents it from shrinking too much */
+                flex-shrink: 0;
             }
 
             .profile-avatar {
                 width: 120px;
                 height: 120px;
-                background-color: var(--color-light-gray-bg); /* Placeholder for avatar */
                 border-radius: 50%;
                 margin-bottom: 30px;
-                border: 4px solid var(--color-white); /* White border around avatar */
+                border: 4px solid var(--color-white);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 40px;
+                font-weight: bold;
+                color: var(--color-dark-blue);
             }
 
             .profile-info {
@@ -106,20 +101,20 @@
                 font-size: 18px;
                 font-weight: 500;
                 margin-bottom: 10px;
-                color: var(--color-white); /* Ensure text is white */
+                color: var(--color-white);
             }
 
             .profile-info p {
                 font-size: 16px;
-                margin-bottom: 25px; /* Space between info items */
-                padding-bottom: 5px; /* Space for dotted line */
-                border-bottom: 1px dashed var(--color-white); /* Dotted line */
-                color: var(--color-white); /* Ensure text is white */
+                margin-bottom: 25px;
+                padding-bottom: 5px;
+                border-bottom: 1px dashed var(--color-white);
+                color: var(--color-white);
             }
 
             .profile-info p:last-child {
                 margin-bottom: 0;
-                border-bottom: none; /* No border for the last one */
+                border-bottom: none;
             }
 
             .btn-publish-need {
@@ -131,25 +126,24 @@
                 font-size: 18px;
                 font-weight: 500;
                 transition: background-color 0.3s ease, color 0.3s ease;
-                width: 80%; /* Adjusted width */
+                width: 80%;
                 text-align: center;
             }
 
             .btn-publish-need:hover {
                 background-color: #f0f0f0;
-                color: var(--color-dark-blue);
             }
 
-            /* Main Content Area (Needs and Donations) */
+            /* Main Content Area */
             .profile-main-content {
                 flex-grow: 1;
                 display: flex;
                 flex-direction: column;
-                gap: 40px; /* Space between sections */
-                padding-right: 20px; /* Small padding on the right for overall content */
+                gap: 40px;
+                padding-right: 20px;
             }
 
-            /* Section Styling (Besoins Urgents, Dons Récents) */
+            /* Section Styling */
             .section-header {
                 display: flex;
                 justify-content: space-between;
@@ -167,7 +161,7 @@
             .section-header .view-all-link {
                 font-size: 16px;
                 font-weight: 500;
-                color: var(--color-dark-blue-text); /* Blue color for links */
+                color: var(--color-dark-blue-text);
                 transition: text-decoration 0.3s ease;
             }
 
@@ -177,8 +171,8 @@
 
             .cards-container {
                 display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive grid */
-                gap: 25px; /* Space between cards */
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                gap: 25px;
             }
 
             /* Card Styling */
@@ -189,13 +183,14 @@
                 box-shadow: 0 4px 15px rgba(0,0,0,0.08);
                 display: flex;
                 flex-direction: column;
+                height: 100%;
+            }
+
+            .need-card {
                 position: relative;
             }
 
             .card-header {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
                 margin-bottom: 15px;
             }
 
@@ -204,22 +199,13 @@
                 font-weight: 500;
                 color: var(--color-text-dark);
                 margin: 0;
-            }
-
-            .status-tag {
-                background-color: var(--color-teal);
-                color: var(--color-white);
-                padding: 6px 12px;
-                border-radius: 5px;
-                font-size: 14px;
-                font-weight: 500;
-                text-transform: uppercase;
+                word-break: break-word;
             }
 
             .card-association-name {
                 font-size: 16px;
                 color: var(--color-gray-text);
-                margin-bottom: 10px;
+                margin-bottom: 15px;
             }
 
             .card-description {
@@ -227,14 +213,17 @@
                 color: var(--color-gray-text);
                 line-height: 1.5;
                 margin-bottom: 20px;
-                flex-grow: 1; /* Allows description to take up available space */
+                word-wrap: break-word;
+                overflow-wrap: break-word;
+                white-space: pre-line;
+                flex-grow: 1;
             }
 
             .card-footer {
                 display: flex;
                 justify-content: space-between;
-                align-items: flex-end;
-                margin-top: auto; /* Pushes footer to the bottom of the card */
+                align-items: center;
+                margin-top: auto;
             }
 
             .location-info {
@@ -245,7 +234,7 @@
             }
 
             .location-info::before {
-                content: '📍'; /* Unicode for location pin */
+                content: '📍';
                 margin-right: 5px;
                 font-size: 18px;
             }
@@ -259,80 +248,81 @@
                 font-weight: 500;
             }
 
-            /* Specific styling for 'Dons Récents' cards on Association page */
-            .donation-card .card-image-placeholder {
-                width: 100%;
-                height: 150px;
-                background-color: var(--color-light-gray-bg);
-                border-radius: 8px;
-                margin-bottom: 15px;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                color: var(--color-gray-text);
-                font-size: 14px;
+            .info-tag.urgent {
+                background-color: #FFEBEE;
+                color: #C62828;
             }
 
-            .donation-card .status-tag {
-                position: absolute;
+            /* Load More Button */
+            .load-more-container {
+                text-align: center;
+                margin-top: 20px;
+            }
+
+            .btn-load-more {
+                background-color: var(--color-green);
+                color: white;
+                border: none;
+                padding: 12px 24px;
+                border-radius: 6px;
+                font-size: 16px;
+                font-weight: 500;
+                cursor: pointer;
+                transition: background-color 0.3s;
+            }
+
+            .btn-load-more:hover {
+                background-color: #3e8e41;
+            }
+
+            /* Hidden besoins */
+            .hidden-besoin {
+                display: none;
+            }
+
+            /* Logout Form */
+            .logout-form {
+                display: inline;
+                margin: 0;
+                padding: 0;
+            }
+        
+            .logout-form button {
+                background: none;
+                border: none;
+                color: var(--color-white);
+                font-weight: 500;
+                opacity: 0.8;
+                transition: opacity 0.3s ease;
+                cursor: pointer;
+                font-family: 'Roboto', sans-serif;
+                font-size: inherit;
+                padding: 0;
+            }
+        
+            .logout-form button:hover {
+                opacity: 1;
+            }
+        
+            .no-results {
+                grid-column: 1 / -1;
+                text-align: center;
+                padding: 20px;
+                color: var(--color-gray-text);
+                font-size: 18px;
+            }
+
+            /* Success Alert */
+            .alert-success {
+                position: fixed;
                 top: 20px;
                 right: 20px;
+                padding: 15px;
+                background-color: #d4edda;
+                color: #155724;
+                border-radius: 5px;
+                z-index: 1000;
             }
-
-            .btn-interess {
-                background-color: #1E3A8A;
-                color: var(--color-white);
-            padding: 6px 12px;
-                border-radius: 10px;
-                font-size: 14px;
-                font-weight: 500;
-                text-transform: uppercase;
-                width: 80px;
-                margin-bottom: 33px;
-            }
-            .btn-interess:hover {
-                background-color: #059FB9; /* Darker teal */
-            }
-            .profile-avatar {
-        /* Vos styles existants... */
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-size: 40px;
-        font-weight: bold;
-        color: var(--color-dark-blue);
-    }
-    .logout-form {
-        display: inline;
-        margin: 0;
-        padding: 0;
-    }
-
-    .logout-form button {
-        background: none;
-        border: none;
-        color: var(--color-white);
-        font-weight: 500;
-        opacity: 0.8;
-        transition: opacity 0.3s ease;
-        cursor: pointer;
-        font-family: 'Roboto', sans-serif;
-        font-size: inherit;
-        padding: 0;
-    }
-
-    .logout-form button:hover {
-        opacity: 1;
-        text-decoration: none;
-    }
-
-    .no-results {
-        grid-column: 1 / -1;
-        text-align: center;
-        padding: 20px;
-        color: var(--color-gray-text);
-        font-size: 18px;
-    }
 
             /* Responsive Design */
             @media (max-width: 1200px) {
@@ -344,17 +334,13 @@
 
                 .profile-left-panel {
                     width: 100%;
-                    max-width: 500px; /* Limit width on smaller screens */
+                    max-width: 500px;
                     padding: 30px 20px;
                 }
 
                 .profile-main-content {
                     width: 100%;
                     padding-right: 0;
-                }
-
-                .cards-container {
-                    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
                 }
             }
 
@@ -364,9 +350,9 @@
                     padding: 15px 20px;
                     align-items: flex-start;
                 }
-                .header .logout-link {
+                .logout-form button {
                     margin-top: 10px;
-                    align-self: flex-end; /* Push logout to the right */
+                    align-self: flex-end;
                 }
 
                 .profile-page-wrapper {
@@ -408,7 +394,7 @@
                 }
 
                 .cards-container {
-                    grid-template-columns: 1fr; /* Single column on very small screens */
+                    grid-template-columns: 1fr;
                     gap: 20px;
                 }
 
@@ -418,19 +404,16 @@
                 .card-title {
                     font-size: 18px;
                 }
-                .status-tag, .info-tag {
+                .info-tag {
                     font-size: 13px;
                     padding: 5px 10px;
                 }
                 .card-association-name, .card-description, .location-info {
                     font-size: 14px;
                 }
-                .donation-card .card-image-placeholder {
-                    height: 120px;
-                }
-                .btn-interess {
-                    padding: 6px 12px;
-                    font-size: 14px;
+                .btn-load-more {
+                    padding: 10px 20px;
+                    font-size: 15px;
                 }
             }
 
@@ -444,6 +427,7 @@
                 .profile-avatar {
                     width: 80px;
                     height: 80px;
+                    font-size: 30px;
                 }
                 .profile-info h4 {
                     font-size: 15px;
@@ -463,7 +447,7 @@
     </head>
     <body>
         @if(session('success'))
-        <div class="alert alert-success" style="position: fixed; top: 20px; right: 20px; padding: 15px; background-color: #d4edda; color: #155724; border-radius: 5px; z-index: 1000;">
+        <div class="alert alert-success">
             {{ session('success') }}
         </div>
         <script>
@@ -471,111 +455,137 @@
                 document.querySelector('.alert-success').style.display = 'none';
             }, 3000);
         </script>
-    @endif
+        @endif
+        
         <header class="header">
             <a href="#" class="logo">SolidarityConnect</a>
             <form action="{{ route('association.logout') }}" method="POST" class="logout-form">
-        @csrf
-        <button type="submit" class="logout-link">Déconnexion</button>
-    </form>
+                @csrf
+                <button type="submit" class="logout-link">Déconnexion</button>
+            </form>
         </header>
-
+    
         <div class="profile-page-wrapper">
-        <div class="profile-left-panel">
-        <div class="profile-avatar" style="background-color: {{ $association->color }};">
-        @php
-            // Récupérer les initiales du nom complet
-            $words = explode(' ', $association->nom_complet);
-            $initials = '';
-
-            // Prendre la première lettre du premier mot
-            if(count($words) > 0) {
-                $initials .= strtoupper(substr($words[0], 0, 1));
-            }
-
-            // Si il y a un deuxième mot, prendre sa première lettre
-            // if(count($words) > 1) {
-            //     $initials .= strtoupper(substr($words[1], 0, 1));
-            // }
-
-            // // Si pas de deuxième mot, juste garder la première lettre
-            // echo $initials;
-        @endphp
-        {{ $association->initials }}
-    </div>
-        <div class="profile-info">
-            <h4>Nom Complet :</h4>
-            <p>{{ $association->nom_complet }}</p>
-            <h4>Email :</h4>
-            <p>{{ $association->email }}</p>
-            <h4>Téléphone :</h4>
-            <p>{{ $association->telephone }}</p>
-        </div>
-        <a href="{{ route('association.besoin.create') }}" class="btn-publish-need">publier un besoin</a>
-    </div>
-
+            <div class="profile-left-panel">
+                <div class="profile-avatar" style="background-color: {{ $association->color }};">
+                    {{ $association->initials }}
+                </div>
+                <div class="profile-info">
+                    <h4>Nom Complet :</h4>
+                    <p>{{ $association->nom_complet }}</p>
+                    <h4>Email :</h4>
+                    <p>{{ $association->email }}</p>
+                    <h4>Téléphone :</h4>
+                    <p>{{ $association->telephone }}</p>
+                </div>
+                <a href="{{ route('association.besoin.create') }}" class="btn-publish-need">publier un besoin</a>
+            </div>
+    
             <div class="profile-main-content">
-            <section class="urgent-needs-section">
-        <div class="section-header">
-            <h3>Besoins Urgents</h3>
-            <a href="{{ route('association.besoins.index') }}" class="view-all-link">Voir tous les besoins</a>
-        </div>
-        <div class="cards-container">
-            @forelse($urgentNeeds as $need)
-                <div class="card need-card">
-                    <div class="card-header">
-                        <h4 class="card-title">{{ $need->titre }}</h4>
+                <section class="urgent-needs-section">
+                    <div class="section-header">
+                        <h3>Besoins Urgents</h3>
+                        <a href="{{ route('association.besoins.index') }}" class="view-all-link">Voir tous les besoins</a>
                     </div>
-                    <p class="card-association-name">{{ $need->association->nom_complet }}</p>
-                    <p class="card-description">{{ $need->description }}</p>
-                    <div class="card-footer">
-                        <span class="location-info">{{ $need->association->adresse }}</span>
-                        <span class="info-tag">{{ $need->status }}</span>
+                    <div class="cards-container" id="besoins-container">
+                        @forelse($urgentNeeds as $index => $need)
+                            <div class="card need-card @if($index >= 3) hidden-besoin @endif">
+                                <div class="card-header">
+                                    <h4 class="card-title">{{ $need->titre }}</h4>
+                                </div>
+                                <p class="card-association-name">{{ $need->association->nom_complet }}</p>
+                                <p class="card-description">{{ $need->description }}</p>
+                                <div class="card-footer">
+                                    <span class="location-info">{{ $need->association->adresse }}</span>
+                                    <span class="info-tag @if($need->status == 'Urgent') urgent @endif">{{ $need->status }}</span>
+                                </div>
+                            </div>
+                        @empty
+                            <div class="no-results">
+                                <p>Aucun besoin urgent trouvé</p>
+                            </div>
+                        @endforelse
                     </div>
-                </div>
-            @empty
-                <div class="no-results">
-                    <p>Aucun besoin urgent trouvé</p>
-                </div>
-            @endforelse
-        </div>
-    </section>
-
-            <section class="recent-donations-section">
-        <div class="section-header">
-            <h3>Dons Récents</h3>
-            <a href="{{ route('association.dons.index') }}" class="view-all-link">Voir tous les dons</a>
-        </div>
-        <div class="cards-container">
-            @forelse($recentDonations as $donation)
-                <div class="card donation-card">
-                    <span class="status-tag">{{ $donation->statut }}</span>
-                    <form action="{{ route('association.interesse', $donation->id) }}" method="POST">
-                        @csrf
-                        <button type="submit" class="btn-interess">m'interesse</button>
-                    </form>
-                    <div class="card-image-placeholder">
-                        @if($donation->image)
-                            <img src="{{ asset('storage/' . $donation->image) }}" alt="Image du don">
-                        @else
-                            <span>Image du don</span>
-                        @endif
+                    
+                    @if(count($urgentNeeds) > 3)
+                        <div class="load-more-container">
+                            <button id="load-more-besoins" class="btn-load-more">
+                                Afficher plus
+                            </button>
+                        </div>
+                    @endif
+                </section>
+        
+                <section class="recent-donations-section">
+                    <div class="section-header">
+                        <h3>Dons Récents</h3>
+                        <a href="{{ route('association.dons.index') }}" class="view-all-link">Voir tous les dons</a>
                     </div>
-                    <h4 class="card-title">{{ $donation->titre }}</h4>
-                    <p class="card-description">{{ $donation->description }}</p>
-                    <div class="card-footer">
-                        <span class="location-info">{{ $donation->localisation }}</span>
-                        <span class="info-tag">{{ $donation->type }}</span>
+                    <div class="cards-container">
+                        @forelse($recentDonations as $donation)
+                            <div class="card donation-card">
+                                <span class="status-tag">{{ $donation->statut }}</span>
+                                <form action="{{ route('association.interesse', $donation->id) }}" method="POST">
+                                    @csrf
+                                    <button type="submit" class="btn-interess">m'interesse</button>
+                                </form>
+                                <div class="card-image-placeholder">
+                                    @if($donation->image)
+                                        <img src="{{ asset('storage/' . $donation->image) }}" alt="Image du don">
+                                    @else
+                                        <span>Image du don</span>
+                                    @endif
+                                </div>
+                                <h4 class="card-title">{{ $donation->titre }}</h4>
+                                <p class="card-description">{{ $donation->description }}</p>
+                                <div class="card-footer">
+                                    <span class="location-info">{{ $donation->localisation }}</span>
+                                    <span class="info-tag">{{ $donation->type }}</span>
+                                </div>
+                            </div>
+                        @empty
+                            <div class="no-results">
+                                <p>Aucun don récent trouvé</p>
+                            </div>
+                        @endforelse
                     </div>
-                </div>
-            @empty
-                <div class="no-results">
-                    <p>Aucun don récent trouvé</p>
-                </div>
-            @endforelse
-        </div>
-    </section>
+                </section>
             </div>
         </div>
+
+        <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const loadMoreBtn = document.getElementById('load-more-besoins');
+            if (loadMoreBtn) {
+                let visibleCount = 3;
+                const totalBesoins = {{ count($urgentNeeds) }};
+                
+                loadMoreBtn.addEventListener('click', function() {
+                    // Show next 3 besoins
+                    const hiddenCards = document.querySelectorAll('.hidden-besoin');
+                    const toShow = Math.min(3, hiddenCards.length);
+                    
+                    for (let i = 0; i < toShow; i++) {
+                        hiddenCards[i].classList.remove('hidden-besoin');
+                    }
+                    
+                    visibleCount += toShow;
+                    
+                    // Hide button if all are visible
+                    if (visibleCount >= totalBesoins) {
+                        loadMoreBtn.style.display = 'none';
+                    }
+                });
+            }
+            
+            // Auto-hide success message after 3 seconds
+            const successMessage = document.querySelector('.alert-success');
+            if (successMessage) {
+                setTimeout(() => {
+                    successMessage.style.display = 'none';
+                }, 3000);
+            }
+        });
+        </script>
     </body>
-    </html>
+</html>
